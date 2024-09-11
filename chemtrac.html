@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chemTrack</title>
+    <!-- <script src="demo.js" defer></script> -->
+    <script src="chemtrac.js" defer></script>
+
+    <link rel="stylesheet" href="chemtrac.css">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header>
+
+        <section>
+            
+            <nav class="p-3 flex bg-green-900 text-white justify-between items-center">
+                <a href="#" id="brand" class="flex gap-2 items-center">
+                    <i class="fa-solid fa-flask"></i>
+                    <span class="text-lg font-bold">ChemLab</span>
+                </a>
+    
+                <div id="nav-menu" class="hidden lg:flex gap-12">
+                    <a href="home.html" class="font-medium hover:text-primary">Home</a>
+                    <a href="#" class="font-medium hover:text-primary">Chemical Inventory</a>
+                    <!-- <a href="checklist.html" class="font-medium hover:text-primary">Safety</a> -->
+                    <a href="help.html" class="font-medium hover:text-primary">Help</a>
+                    
+                </div>
+    
+                <button class="hidden lg:flex gap-2 items-center border border-gray-400 px-6 py-2 rounded-lg hover:border-gray-600">
+                    <img src="" alt="">
+                    <span><a href="#">Sign in</a> | <a href="#">Sign up</a></span>
+                    <i class="fa-solid fa-arrow-right"></i>
+    
+                </button>
+    
+                <button class="p-2 lg:hidden" onclick="handleMenu()">
+                    <i class="fa-solid fa-bars text-grey-600"></i>
+                </button>
+    
+                <div id="nav-dialog" class="hidden fixed z-10 md:hidden bg-white inset-0 p-3">
+                    <div id="nav-bar" class="flex justify-between">
+                        <a href="#" id="brand" class="flex gap-2 items-center pl-9">
+                            <img class="object-cover max-w-12 max-h-12" src="" alt="">
+                            <span class="text-lg font-medium font-display"></span>
+                        </a>
+                        <button class="p-2 md:hidden" onclick="handleMenu()">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+    
+                    </div>
+    
+                    <div>
+                        <a href="home.html" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Home</a>
+                        <a href="#" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Chemical Inventory</a>
+                        <!-- <a href="checklist.html" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Safety</a> -->
+                        <a href="help.html" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Help</a>
+                        
+                    </div>
+                    <div class="h-[1px] bg-grey-300"></div>
+                    <button class=" mt-6 w-full flex gap-2 items-center px-6 py-4 rounded-full hover:bg-gray-50">
+                        <img src="" alt="">
+                        <span><a href="#">Sign in</a> | <a href="#">Sign up</a></span>
+                    </button>
+            
+                </div>
+            </nav>
+        </section>
+    </header>
+
+    <main>
+
+           
+        <div class="search-bar">            
+            <input type="search" placeholder="Search chemicals..." class="search" >
+            <select class="filter-by">
+                <option value="all">All</option>
+                <option value="acid">Acid</option>
+                <option value="base">Base</option>
+                <option value="neutral">Neutral</option>
+                <option value="solvent">Solvent</option>
+            </select>
+        </div>
+
+
+        <div class="add-chemical">
+            <button id="add_chemical">
+                <i class="fa-solid fa-plus"></i>
+                Add Chemical</button>
+        </div>
+        <div class="chemicals">
+            <ul id="chemical-list">
+               
+            </ul>
+        </div>
+        
+    </main>
+
+    <div class="add-chemical-form">
+        
+<div class="template">
+    <div class="header">
+        <h2 style="font-size: 1.5rem;font-weight: bold; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> Chemical Information </h2>
+        <span id="cancel-form">&times;</span>
+    </div>
+   
+    <form id="chemical-form">
+       
+
+        <label for="chemicalName">Chemical Name:</label>
+        <input type="text" id="chemicalName" name="chemicalName" required>
+
+        <label for="amount">Amount Available:</label>
+        <select name="unit" id="select-unit">
+            <option value="L">Litres</option>
+            <option value="ml">Mililitres</option>
+            <option value="gm">Gram</option>
+            <option value="kg">Kilogram</option>
+            <option value="mg">Miligram</option>
+
+
+
+        </select>
+        <input type="number" id="amount" name="amount" min="0" required>
+        <label for="expiryDate">Expiry Date</label>
+        <input type="date" id="ex-date" name="expiryDate" placeholder="dd/mm/yy" required>
+        <label for="location">Location:</label>
+        <input type="text" id="form-location" name="location" placeholder="ex. Lab-no: , Shelf-no: ,Row-no:" required>
+
+        <label for="type">Type:</label>
+        <select name="select-type" id="select-type">
+            <option value="Acid">Acid</option>
+            <option value="Basic">Basic</option>
+            <option value="Neutral">Neutral</option>
+            <option value="Solvent">Solvent</option>
+
+
+
+        </select>
+
+        <label for="appearance">Appearance:</label>
+        <textarea id="appearance" name="appearance" rows="2" required></textarea>
+
+        <label for="hazard">Hazard , Precautions , H-codes:</label>
+        <textarea id="hazards" name="hazard" rows="2" required></textarea>
+        <button type="submit" id="submit-form">Add Chemical</button>
+    </form>
+</div>
+    </div>
+
+<div class="edit-form">
+        <div class="template">
+            <div class="header">
+                <h2 style="font-size: 1.5rem;font-weight: bold; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Edit Information </h2>
+                <span id="cancel-edit-form">&times;</span>
+            </div>
+        <form id="edit-chemical-form">
+            <label for="userName">User Name:</label>
+            <input type="text" id="userName" name="userName" required>
+            <label for="chemicalName">Chemical Name:</label>
+            <input type="text" id="editChemName" name="chemicalName" required>
+    
+            <label for="amount">Amount Used:</label>
+            <select name="unit" id="edit-select-unit">
+                <option value="L">Litres</option>
+                <option value="ml">Mililitres</option>
+                <option value="gm">Gram</option>
+                <option value="kg">Kilogram</option>
+                <option value="mg">Miligram</option>
+            </select>
+            <input type="number" id="used-amount" name="used-amount" min="0" required>
+    
+            <label for="location"> Location:</label>
+            <input type="text" id="new-location" name="location" required>
+    
+            <label for="type">Type:</label>
+            <select name="select-type" id="edit-select-type">
+                <option value="Acid">Acid</option>
+                <option value="Basic">Basic</option>
+                <option value="Neutral">Neutral</option>
+                <option value="Solvent">Solvent</option>
+            </select>
+    
+            <button type="submit" id="confirm-edit">Edit Details</button>
+        </form>
+    </div>
+</div>
+    
+
+    
+<footer class="bg-green-900 text-white py-4">
+    <div class="container mx-auto text-center">
+      <!-- Footer Content -->
+      <p class="text-sm">© 2024 Chemical Inventory. All Rights Reserved.</p>
+      <p class="text-sm">Improving Safety and Compliance in Labs</p>
+  
+      <!-- Footer Links -->
+      <div class="flex justify-center space-x-6 mt-3">
+        <a href="#home" class="hover:text-gray-400">Home</a>
+        <a href="#about" class="hover:text-gray-400">Chemical Inventory</a>
+        <a href="#privacy" class="hover:text-gray-400">Help</a>
+      </div>
+    </div>
+</footer>
+
+</body>
+</html>

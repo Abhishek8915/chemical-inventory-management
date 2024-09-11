@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- css file -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+     <!-- cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+        theme: {
+            extend: {
+            colors: {
+                customColor: '#123456',
+            },
+            },
+        },
+        };
+    </script>
+
+
+</head>
+<body>
+    <section>
+            
+        <nav class="p-3 flex bg-white justify-between items-center">
+            <a href="#" id="brand" class="flex gap-2 items-center">
+                <img class="object-cover max-w-20 max-h-20 pl-20" src="" alt="">
+                
+            </a>
+
+            <div id="nav-menu" class="hidden lg:flex gap-12">
+                <a href="home.html" class="font-medium hover:text-primary">Home</a>
+                <a href="chemtrac.html" class="font-medium hover:text-primary">Chemical Inventory</a>
+                <a href="#" class="font-medium hover:text-primary">Safety</a>
+                <a href="help.html" class="font-medium hover:text-primary">Help</a>
+                
+            </div>
+
+            <button class="hidden lg:flex gap-2 items-center border border-gray-400 px-6 py-2 rounded-lg hover:border-gray-600">
+                <img src="" alt="">
+                <span><a href="#">Sign in</a> | <a href="#">Sign up</a></span>
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+            <button class="p-2 lg:hidden" onclick="handleMenu()">
+                <i class="fa-solid fa-bars text-grey-600"></i>
+            </button>
+
+            <div id="nav-dialog" class="hidden fixed z-10 md:hidden bg-white inset-0 p-3">
+                <div id="nav-bar" class="flex justify-between">
+                    <a href="#" id="brand" class="flex gap-2 items-center pl-9">
+                        <img class="object-cover max-w-12 max-h-12" src="" alt="">
+                        <span class="text-lg font-medium font-display"></span>
+                    </a>
+                    <button class="p-2 md:hidden" onclick="handleMenu()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                </div>
+
+                <div>
+                    <a href="home.html" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Home</a>
+                    <a href="chemtrac.html" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Chemical Inventory</a>
+                    <a href="#" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Safety</a>
+                    <a href="help.html" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Help</a>
+                    
+                </div>
+                <div class="h-[1px] bg-grey-300"></div>
+                <button class=" mt-6 w-full flex gap-2 items-center px-6 py-4 rounded-full hover:bg-gray-50">
+                    <img src="" alt="">
+                    <span><a href="#">Sign in</a> | <a href="#">Sign up</a></span>
+                </button>
+        
+            </div>
+        </nav>
+    </section>
+
+    <section id="measure_safety">
+
+        <div class="safty_protocols">
+            <label> Wearing appropriate Personal Protective Equipment (PPE) (e.g., gloves, goggles, lab coat) <input type="checkbox" name="check1" class="boxcheck"></label><br>
+            <label>All chemicals are correctly labeled with names, concentrations, and hazard warnings <input type="checkbox" name="check2" class="boxcheck"> </label><br>
+            <label> Chemical Safety Data Sheets (SDS) for all chemicals are readily available <input type="checkbox" name="check3" class="boxcheck"></label><br>
+            <label> Work area is free of clutter, especially from flammable materials <input type="checkbox" name="check4" class="boxcheck"></label><br>
+            <label>Familiarity with the location of emergency exits and evacuation routes <input type="checkbox" name="check5" class="boxcheck"> </label><br>
+            <label>Emergency contact numbers are posted visibly in the lab <input type="checkbox" name="check6" class="boxcheck"> </label><br>
+            <label> Eyewash stations, fire extinguishers, and safety showers are accessible and operational <input type="checkbox" name="check7" class="boxcheck"></label><br>
+            <label> Proper ventilation is ensured (e.g., fume hoods are operational) <input type="checkbox" name="check8" class="boxcheck"></label><br>
+            <label> Hazardous waste containers are available and clearly labeled for waste disposal <input type="checkbox" name="check9" class="boxcheck"></label><br>
+            <label> Familiarity with the procedures for handling spills and chemical exposures <input type="checkbox" name="check10" class="boxcheck"></label><br>
+            <label> Knowledge of the lab's fire safety protocols and equipment usage <input type="checkbox" name="check11" class="boxcheck"></label><br>
+            <label> Work surfaces have been cleaned and decontaminated before starting any experiments <input type="checkbox" name="check12" class="boxcheck"></label><br>
+            <label> Only authorized personnel are present in the lab during hazardous experiments <input type="checkbox" name="check13" class="boxcheck"></label><br>
+            <label> Lab equipment has been inspected and is functioning properly <input type="checkbox" name="check14" class="boxcheck"></label><br>
+            <label> Hands and arms are protected, and long hair is tied back <input type="checkbox" name="check15" class="boxcheck"></label><br>
+            <label> Closed-toe shoes and long pants are worn to protect against spills <input type="checkbox" name="check16" class="boxcheck"></label><br>
+            <label> No food or drink is present in the laboratory area <input type="checkbox" name="check17" class="boxcheck"></label><br>
+            <label> Mobile phones and electronic devices are stored away to avoid contamination <input type="checkbox" name="check18" class="boxcheck"></label><br>
+
+        </div>
+        
+        <div class="report_btn">
+            <button onclick="check_result">View Report</button>
+        </div>
+        <div id="checklist_result">
+
+        </div>
+    </section>
+
+    <section id="load_report">
+        
+    </section>
+
+    <script>
+        const navDialog = document.getElementById('nav-dialog');
+        function handleMenu(){
+            navDialog.classList.toggle('hidden');
+        }
+
+        
+        function check_result(){
+            let total_clicks = 0;
+            const checks = document.querySelectorAll('input[type="checkbox"]:checked');
+            total_clicks = checks.length;
+
+            show_powerBi_Report(total_clicks);
+        }
+
+        // backend ...
+        /*
+        1. The backend will receive the score and save it for report generation.
+        2. use Power BI’s REST API to generate a report based on the score
+        */
+
+        function show_powerBi_Report(){
+            fetch('/submitChecklist',{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({score:score})
+                    
+            })
+            .then(response => response.json())
+            .then(data => {
+                const reportUrl = data.reportUrl;
+                document.getElementById('load_report').innerHTML = `<iframe width="800" height="600" src="${reportUrl}" frameborder="0" allowFullScreen="true"></iframe>`;
+            })
+            .catch(error => console.error('Error occur while generating report:', error));
+        }
+    </script>
+</body>
+</html>
+
+<!-- 
+commit deadline
+remainder till deadline
+reset -->

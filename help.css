@@ -1,0 +1,130 @@
+
+/* new */
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 32px;
+    color: #2e8b57; /* Sea green color */
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.sub-title {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 15px;
+    border-left: 5px solid #2e8b57;
+    padding-left: 10px;
+    text-transform: uppercase;
+}
+
+/* Paragraph and List Styling */
+.paragraph {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list-item {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.list-item:before {
+    content: "\2022";
+    color: #2e8b57;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* FAQ Section */
+.faq {
+    margin-top: 20px;
+}
+
+.faq-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.faq-question {
+    font-size: 20px;
+    color: #2e8b57;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.faq-answer {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Links */
+.email-link {
+    color: #2e8b57;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}
+
+/* Contact Section */
+.contact-support {
+    margin-top: 20px;
+}
+
+.list-item a {
+    text-decoration: none;
+    color: #2e8b57;
+}
+
+.list-item a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 28px;
+    }
+
+    .sub-title {
+        font-size: 22px;
+    }
+
+    .paragraph, .list-item, .faq-question, .faq-answer {
+        font-size: 16px;
+    }
+}

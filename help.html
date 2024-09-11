@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - Chemical Inventory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.1/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Custom styles can be added here */
+    </style>
+    <link rel="stylesheet" href="help.css">
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - Chemical Inventory</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+
+        <section>
+            
+            <nav class="p-3 flex bg-green-900 text-white justify-between items-center fixed top-0 left-0 w-full z-50 shadow-md">
+                <a href="#" id="brand" class="flex gap-2 items-center">
+                    <i class="fa-solid fa-flask"></i>
+                    <span class="text-lg font-bold">ChemLab</span>
+                </a>
+            
+                <div id="nav-menu" class="hidden lg:flex gap-12">
+                    <a href="home.html" class="font-medium hover:text-primary">Home</a>
+                    <a href="chemtrac.html" class="font-medium hover:text-primary">Chemical Inventory</a>
+                    <a href="#" class="font-medium hover:text-primary">Help</a>
+                </div>
+            
+                <button class="hidden lg:flex gap-2 items-center border border-gray-400 px-6 py-2 rounded-lg hover:border-gray-600">
+                    <img src="" alt="">
+                    <span><a href="#">Sign in</a> | <a href="#">Sign up</a></span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            
+                <button class="p-2 lg:hidden" onclick="handleMenu()">
+                    <i class="fa-solid fa-bars text-grey-600"></i>
+                </button>
+            
+                <div id="nav-dialog" class="hidden fixed z-10 md:hidden bg-white inset-0 p-3">
+                    <div id="nav-bar" class="flex justify-between">
+                        <a href="#" id="brand" class="flex gap-2 items-center pl-9">
+                            <img class="object-cover max-w-12 max-h-12" src="" alt="">
+                            <span class="text-lg font-medium font-display"></span>
+                        </a>
+                        <button class="p-2 md:hidden" onclick="handleMenu()">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+            
+                    <div>
+                        <a href="home.html" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Home</a>
+                        <a href="chemtrac.html" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Chemical Inventory</a>
+                        <a href="#" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Help</a>
+                    </div>
+                    <div class="h-[1px] bg-grey-300"></div>
+                    <button class="mt-6 w-full flex gap-2 items-center px-6 py-4 rounded-full hover:bg-gray-50">
+                        <img src="" alt="">
+                        <span><a href="#">Sign in</a> | <a href="#">Sign up</a></span>
+                    </button>
+                </div>
+            </nav>
+            
+            <!-- Add padding to the content below the navbar -->
+            <div class="pt-16">
+                <!-- Content goes here -->
+            </div>
+            
+        </section>
+    </header>
+    
+    <main class="main-content">
+        <div class="container">
+            <h2 class="section-title">Help & Support</h2>
+
+            <section class="section">
+                <h3 class="sub-title">Getting Started</h3>
+                <p class="paragraph">
+                    To get started with the Chemical Inventory System, follow these steps:
+                </p>
+                <ul class="list">
+                    <li class="list-item">Log in to your account.</li>
+                    <li class="list-item">Navigate to the Inventory section to view and manage chemicals.</li>
+                    <li class="list-item">Use the search bar to find specific items.</li>
+                    <li class="list-item">Click show details button for detailed information.</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h3 class="sub-title">Frequently Asked Questions</h3>
+                <div class="faq">
+                    <div class="faq-item">
+                        <h4 class="faq-question">How do I add a new chemical?</h4>
+                        <p class="faq-answer">To add a new chemical, go to the Inventory section and click on the "Add New Item" button. Fill in the required details and save.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4 class="faq-question">How can I track chemical usage?</h4>
+                        <p class="faq-answer">Chemical usage can be tracked through the Inventory section. You can view usage logs and generate reports from the Reports section.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4 class="faq-question">What should I do if I encounter a problem?</h4>
+                        <p class="faq-answer">If you encounter any issues, please contact our support team via the contact form on the Contact page or email us at support@chemicalinventory.com.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="sub-title">Contact Support</h3>
+                <p class="paragraph">If you need further assistance, feel free to reach out to our support team:</p>
+                <ul class="list">
+                    <li class="list-item">Email: <a href="mailto:support@chemicalinventory.com" class="email-link">support@chemicalinventory.com</a></li>
+                    <li class="list-item">Phone: (123) 456-7890</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+
+    
+    <footer class="bg-green-900 text-white py-4">
+        <div class="container mx-auto text-center">
+          <!-- Footer Content -->
+          <p class="text-sm">© 2024 Chemical Inventory. All Rights Reserved.</p>
+          <p class="text-sm">Improving Safety and Compliance in Labs</p>
+      
+          <!-- Footer Links -->
+          <div class="flex justify-center space-x-6 mt-3">
+            <a href="#home" class="hover:text-gray-400">Home</a>
+            <a href="#about" class="hover:text-gray-400">Chemical Inventory</a>
+            <a href="#privacy" class="hover:text-gray-400">Help</a>
+          </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+</html>

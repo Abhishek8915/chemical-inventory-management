@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.safty_protocols label{
+    border: 2px solid rgba(203, 194, 194, 0.333);
+    background-color: rgba(248, 240, 240, 0.833);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    
+}
+.safty_protocols label .boxcheck{
+    padding-left: 5px;
+}
+
+.report_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.report_btn button{
+    background-color: rgb(66, 66, 216);
+    color: white;
+    font-weight:bold;
+    padding: 5px;
+    font-size: 1rem;
+    border: transparent;
+    border-radius: 5px;
+}
+.boxcheck{
+    margin-: 90%;
+}

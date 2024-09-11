@@ -1,0 +1,247 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+</style>
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    height: 100vh;
+}
+
+.search-bar{
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1rem;
+    margin-top: 1rem;
+
+}
+.search{
+    border-radius: 1rem;
+    width:40%;
+    border: 2px solid lightgrey;
+    outline: none;
+    height: 2rem;
+    padding-left: 1.5rem;
+    font-weight: 100;
+    padding-right: 1.5rem;
+    margin-left: 2rem;
+    
+}
+
+.filter-by{
+    background-color: #14532d;
+    color: whitesmoke;
+    padding: 0.2rem 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.chemicals{
+    overflow-y: scroll;
+    height: 90vh;
+}
+.chemicals li{
+    width: 80%;
+    margin: auto;
+    border: 0.5px solid lightgray;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+    box-shadow: 0.15rem 0.22rem  lightgray;
+    padding-left: 0.3rem;
+    min-height: 3rem;
+    flex-wrap: wrap;
+}
+.chemical-name{
+    padding-left: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    background-color: #f5f5dc;
+}
+h4{
+    color: rgb(64, 64, 130);
+}
+.amount, .location, .type,.appearance{
+    display: flex;
+    margin-bottom: 0.3rem;
+}
+.volume , .location-info{
+    margin-left: 0.2rem;
+}
+#alert{
+    color: red;
+}
+.info-button{
+    padding: 0.3rem 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    background-color:#14532d;
+    color: white;
+    cursor: pointer;  
+}
+#edit-btn{
+    padding: 0.3rem 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    background-color:orange;
+    color: white;
+    cursor: pointer; 
+}
+.details{
+    border-top: 0.5px solid lightgray;
+    margin-top: 0.5rem;
+    display: none;
+    width: 100%;
+}
+.active{
+    display: block;
+}
+#add_chemical{
+    border-radius: 1rem;
+    background-color: white;
+    padding: 0.2rem 0.3rem ;
+    outline: none;
+    font-weight: bold;
+    border: 1px solid lightgray;
+    cursor: pointer;   
+}
+.add-chemical{
+    margin-left: 10%;
+}
+.name{
+    font-size: medium;
+    font-weight: 500;
+}
+
+/* form style */
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+#cancel-form,#cancel-edit-form{
+    float: right;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 4rem;
+}
+.template {
+    background-color: #fff;
+    padding: 1.25rem;
+    border-radius: 0.625rem;
+    width: 23rem;
+    height: auto;
+    margin: auto;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+}
+h2 {
+    text-align: center;
+}
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+input,#select-type, textarea {
+    width: 100%;
+    padding: 0.625rem;
+    margin-bottom: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    outline: 1px lightgrey;
+}
+#edit-select-type{
+    width: 100%;
+    padding: 0.625rem;
+    margin-bottom: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    outline: 1px lightgrey;
+}
+#select-unit{
+    width: 40%;  
+    outline: none;
+    border: 1px solid lightgray;        
+}
+#submit-form,#confirm-edit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.625rem;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    width: 100%;
+}
+#submit-form,#confirm-edit :hover {
+    background-color: #45a049;
+}
+.add-chemical-form,.edit-form{
+    position: fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+/* form style end */
+
+/* type of chemical added here */
+.type_of_chemical{
+    padding-top: 5px;
+}
+.unit{
+    padding-top: 5px;
+}
+
+
+@media (max-width:768px){
+    .nav-items{
+        display: none;
+    }
+    .logo{
+        font-size: 1.3rem;
+    }
+    .hamburger-menu{
+        display: block;
+        margin-right: 3rem;
+    }
+    
+}
+@media (max-width:500px){
+    
+    #edit-btn , .info-button{
+        font-size: 0.6rem;
+    }
+    .chemicals li{
+        width: 90%;
+    }
+    
+}
+@media (max-width:320px){
+
+    #edit-btn , .info-button{
+        font-size: 0.6rem;
+    }
+    .chemicals li{
+        width: 90%;
+    }
+
+    
+}

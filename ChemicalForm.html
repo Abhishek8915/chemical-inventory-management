@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemical Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 1.25rem;
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+        }
+        #cancel{
+            float: right;
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 4rem;
+        }
+        .template {
+            background-color: #fff;
+            padding: 1.25rem;
+            border-radius: 0.625rem;
+            max-width: 31.25rem;
+            margin: auto;
+            box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.625rem;
+            margin-bottom: 0.9rem;
+            border: 1px solid #ccc;
+            border-radius: 0.3rem;
+            outline: 1px lightgrey;
+        }
+        select{
+            width: 40%;  
+            outline: none;
+            border: 1px solid lightgray;        
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.625rem;
+            border: none;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="template">
+    <div class="header">
+        <h2>Chemical Information Form</h2>
+        <span id="cancel">&times;</span>
+    </div>
+   
+    <form>
+        <label for="chemicalName">Chemical Name:</label>
+        <input type="text" id="chemicalName" name="chemicalName" required>
+
+        <label for="amount">Amount Available:</label>
+        <select name="unit" id="unit">
+            <option value="Litres">Litres</option>
+            <option value="Mililitres">Mililitres</option>
+            <option value="grams">Grams</option>
+            <option value="milligrams">Milligrams</option>
+            <option value="killograms">killograms</option>
+
+        </select>
+        <input type="number" id="amount" name="amount" min="0" required>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" placeholder="ex. Lab-no: , Shelf-no: ,Row-no:" required>
+
+        <label for="type">Type:</label>
+        <!-- <input type="text" id="type" name="type" required> -->
+        <select name="type_of_chemical" id="type_of_chemical">
+            <option value="acid">Acid</option>
+            <option value="base">Base</option>
+            <option value="neutral">Neutral</option>
+            <option value="solvent">Solvent</option>
+        </select>
+
+        <label for="appearance">Appearance:</label>
+        <textarea id="appearance" name="appearance" rows="4" required></textarea>
+
+        <label for="hazard">Hazard and Precautions</label>
+        <textarea id="hazards" name="hazard" rows="4" required></textarea>
+
+
+
+        <button type="submit">Add Chemical</button>
+    </form>
+</div>
+
+</body>
+</html>
